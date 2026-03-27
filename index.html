@@ -506,26 +506,6 @@
     const nameInput = document.getElementById("nameInput");
     const searchResult = document.getElementById("searchResult");
 
-    function createSummary() {
-      const strokeCount = Object.keys(groupedData).length;
-      const giftCount = data.filter(person => person.hasGift).length;
-      const mainTableCount = data.filter(person => person.table === "主").length;
-
-      const cards = [
-        { label: "總賓客數", value: data.length },
-        { label: "筆畫區段", value: strokeCount },
-        { label: "有禮餅", value: giftCount },
-        { label: "主桌名單", value: mainTableCount }
-      ];
-
-      summary.innerHTML = cards.map(card => `
-        <div class="summary-card">
-          <strong>${card.value}</strong>
-          <span>${card.label}</span>
-        </div>
-      `).join("");
-    }
-
     function createTableSection(stroke, people) {
       return `
         <section class="stroke-section" id="stroke-${stroke}">
@@ -630,7 +610,6 @@
       }
     });
 
-    createSummary();
     renderContent();
   </script>
 </body>
