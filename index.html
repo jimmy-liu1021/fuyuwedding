@@ -8,11 +8,9 @@
     :root {
       --bg: #f6efe6;
       --card: rgba(255, 252, 247, 0.96);
-      --card-strong: #fffaf3;
       --ink: #2f241c;
       --muted: #7a695c;
       --accent: #b85c38;
-      --accent-soft: #f3d7c7;
       --line: rgba(104, 74, 52, 0.16);
       --shadow: 0 18px 48px rgba(92, 58, 37, 0.14);
       --ok: #2f7d4c;
@@ -39,71 +37,71 @@
     .page {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 48px 20px 96px;
+      padding: 32px 16px 120px;
     }
 
     .hero {
-      padding: 32px;
+      padding: 24px;
       border: 1px solid var(--line);
-      border-radius: 28px;
+      border-radius: 24px;
       background: linear-gradient(135deg, rgba(255, 250, 243, 0.95), rgba(247, 234, 223, 0.96));
       box-shadow: var(--shadow);
     }
 
     .eyebrow {
       margin: 0 0 8px;
-      font-size: 14px;
+      font-size: 13px;
       letter-spacing: 0.16em;
       color: var(--accent);
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(32px, 5vw, 56px);
+      font-size: clamp(30px, 5vw, 52px);
       line-height: 1.08;
       font-weight: 800;
     }
 
     .intro {
       max-width: 760px;
-      margin: 16px 0 0;
-      font-size: 17px;
-      line-height: 1.8;
+      margin: 14px 0 0;
+      font-size: 16px;
+      line-height: 1.75;
       color: var(--muted);
     }
 
     .summary {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 14px;
-      margin-top: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
     }
 
     .summary-card {
-      padding: 18px 20px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.7);
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.72);
       border: 1px solid rgba(104, 74, 52, 0.12);
     }
 
     .summary-card strong {
       display: block;
-      font-size: 28px;
       margin-bottom: 4px;
+      font-size: 26px;
     }
 
     .content {
-      margin-top: 28px;
+      margin-top: 24px;
     }
 
     .stroke-section {
-      margin-bottom: 28px;
-      padding: 22px;
-      border-radius: 24px;
+      margin-bottom: 20px;
+      padding: 18px;
+      border-radius: 22px;
       border: 1px solid var(--line);
       background: var(--card);
       box-shadow: var(--shadow);
-      scroll-margin-top: 24px;
+      scroll-margin-top: 20px;
     }
 
     .section-header {
@@ -111,18 +109,19 @@
       justify-content: space-between;
       gap: 12px;
       align-items: baseline;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
       flex-wrap: wrap;
     }
 
     .section-header h2 {
       margin: 0;
-      font-size: 26px;
+      font-size: 24px;
     }
 
     .section-header p {
       margin: 0;
       color: var(--muted);
+      font-size: 14px;
     }
 
     .table-wrap {
@@ -132,25 +131,34 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 640px;
+      min-width: 460px;
+      table-layout: fixed;
+    }
+
+    col.col-name {
+      width: 52%;
+    }
+
+    col.col-table {
+      width: 24%;
+    }
+
+    col.col-gift {
+      width: 24%;
     }
 
     th,
     td {
-      padding: 14px 12px;
+      padding: 12px 8px;
       text-align: left;
       border-bottom: 1px solid var(--line);
     }
 
     th {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--muted);
       letter-spacing: 0.05em;
       text-transform: uppercase;
-    }
-
-    tbody tr {
-      transition: background-color 0.2s ease, transform 0.2s ease;
     }
 
     tbody tr:hover {
@@ -173,28 +181,58 @@
 
     .floating-search {
       position: fixed;
-      right: 20px;
-      bottom: 20px;
-      width: min(360px, calc(100vw - 24px));
-      padding: 18px;
-      border-radius: 24px;
-      background: rgba(47, 36, 28, 0.92);
+      right: 14px;
+      bottom: 14px;
+      width: min(360px, calc(100vw - 28px));
+      padding: 14px;
+      border-radius: 22px;
+      background: rgba(47, 36, 28, 0.94);
       color: #fffaf3;
       box-shadow: 0 24px 60px rgba(36, 23, 16, 0.34);
       backdrop-filter: blur(10px);
       z-index: 20;
+      transition: width 0.2s ease, padding 0.2s ease;
     }
 
-    .floating-search h3 {
-      margin: 0 0 8px;
-      font-size: 22px;
+    .floating-search-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
     }
 
-    .floating-search p {
-      margin: 0 0 14px;
+    .floating-search-title {
+      min-width: 0;
+    }
+
+    .floating-search-title h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .floating-search-title p {
+      margin: 8px 0 0;
       color: rgba(255, 250, 243, 0.72);
-      line-height: 1.6;
-      font-size: 14px;
+      line-height: 1.55;
+      font-size: 13px;
+    }
+
+    .toggle-search {
+      flex: 0 0 auto;
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(255, 250, 243, 0.22);
+      border-radius: 12px;
+      background: rgba(255, 250, 243, 0.1);
+      color: #fffaf3;
+      font: inherit;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .floating-search-body {
+      margin-top: 12px;
     }
 
     .search-controls {
@@ -204,7 +242,7 @@
 
     .floating-search input,
     .floating-search select,
-    .floating-search button {
+    .floating-search button.action-btn {
       width: 100%;
       border: none;
       border-radius: 14px;
@@ -218,28 +256,38 @@
       color: var(--ink);
     }
 
-    .floating-search button {
+    .floating-search button.action-btn {
       background: linear-gradient(135deg, #d9784f, #b85c38);
       color: white;
       font-weight: 700;
       cursor: pointer;
     }
 
-    .floating-search button:hover {
-      filter: brightness(1.04);
+    .search-result {
+      min-height: 20px;
+      margin-top: 10px;
+      font-size: 13px;
+      line-height: 1.55;
+      color: rgba(255, 250, 243, 0.88);
     }
 
-    .search-result {
-      min-height: 22px;
-      margin-top: 10px;
-      font-size: 14px;
-      line-height: 1.6;
-      color: rgba(255, 250, 243, 0.85);
+    .floating-search.collapsed {
+      width: auto;
+      padding: 10px 12px;
+    }
+
+    .floating-search.collapsed .floating-search-title p,
+    .floating-search.collapsed .floating-search-body {
+      display: none;
+    }
+
+    .floating-search.collapsed .floating-search-title h3 {
+      font-size: 15px;
     }
 
     @media (max-width: 720px) {
       .page {
-        padding: 20px 12px 132px;
+        padding: 18px 12px 110px;
       }
 
       .hero,
@@ -250,7 +298,6 @@
 
       .intro {
         font-size: 15px;
-        line-height: 1.7;
       }
 
       .summary {
@@ -258,7 +305,7 @@
       }
 
       .summary-card {
-        padding: 14px 16px;
+        padding: 14px 15px;
       }
 
       .summary-card strong {
@@ -266,45 +313,20 @@
       }
 
       .section-header h2 {
-        font-size: 22px;
+        font-size: 21px;
       }
 
-      .section-header p {
-        font-size: 13px;
-      }
-
+      .section-header p,
       th,
       td {
-        padding: 12px 8px;
-        font-size: 14px;
+        font-size: 13px;
       }
 
       .floating-search {
-        right: 12px;
         left: 12px;
+        right: 12px;
         bottom: 12px;
         width: auto;
-        padding: 14px;
-        border-radius: 20px;
-      }
-
-      .floating-search h3 {
-        font-size: 18px;
-      }
-
-      .floating-search p,
-      .search-result {
-        font-size: 13px;
-      }
-
-      .floating-search input,
-      .floating-search select,
-      .floating-search button {
-        padding: 11px 12px;
-      }
-
-      table {
-        min-width: 480px;
       }
     }
   </style>
@@ -314,178 +336,34 @@
     <section class="hero">
       <p class="eyebrow">WEDDING GUEST DIRECTORY</p>
       <h1>婚宴賓客名單</h1>
-      <p class="intro">
-        下方完整顯示所有賓客資料，並依筆畫分組。你可以直接往下瀏覽，
-        也可以使用右下角懸浮查詢框，用姓名快速定位，或從筆畫下拉選單跳轉到指定區段。
-      </p>
       <div class="summary" id="summary"></div>
     </section>
 
     <main class="content" id="content"></main>
   </div>
 
-  <aside class="floating-search">
-    <h3>快速查詢</h3>
-    <p>輸入姓名可搜尋並跳到結果，或直接選擇筆畫。</p>
-    <div class="search-controls">
-      <input id="nameInput" type="text" placeholder="輸入姓名">
-      <button id="searchBtn" type="button">搜尋姓名</button>
-      <select id="strokeSelect">
-        <option value="">選擇筆畫跳轉</option>
-      </select>
+  <aside class="floating-search" id="floatingSearch">
+    <div class="floating-search-header">
+      <div class="floating-search-title">
+        <h3>快速查詢</h3>
+        <p>輸入姓名搜尋或選擇筆畫。</p>
+      </div>
+      <button id="toggleSearchBtn" class="toggle-search" type="button" aria-expanded="true" aria-label="Toggle search panel">-</button>
     </div>
-    <div class="search-result" id="searchResult"></div>
+    <div class="floating-search-body">
+      <div class="search-controls">
+        <input id="nameInput" type="text" placeholder="輸入姓名">
+        <button id="searchBtn" class="action-btn" type="button">搜尋姓名</button>
+        <select id="strokeSelect">
+          <option value="">選擇筆畫跳轉</option>
+        </select>
+      </div>
+      <div class="search-result" id="searchResult"></div>
+    </div>
   </aside>
 
+  <script src="data.js"></script>
   <script>
-    const data = [
-      { name: "孔正富", table: "3", stroke: 4, hasGift: false },
-      { name: "孔紀秋梅", table: "主", stroke: 4, hasGift: false },
-      { name: "孔麗芳", table: "8", stroke: 4, hasGift: false },
-      { name: "王平安", table: "12", stroke: 4, hasGift: true },
-      { name: "王俞婷", table: "29", stroke: 4, hasGift: true },
-      { name: "王鈺", table: "28", stroke: 4, hasGift: true },
-      { name: "王榮慶", table: "16", stroke: 4, hasGift: false },
-      { name: "王德忠", table: "23", stroke: 4, hasGift: false },
-      { name: "王錦松", table: "21", stroke: 4, hasGift: false },
-      { name: "古榮昌", table: "10", stroke: 5, hasGift: false },
-      { name: "朱一正", table: "20", stroke: 6, hasGift: false },
-      { name: "朱展輝", table: "12", stroke: 6, hasGift: true },
-      { name: "何駿惠", table: "16", stroke: 7, hasGift: false },
-      { name: "余再得", table: "22", stroke: 7, hasGift: false },
-      { name: "吳光裕", table: "20", stroke: 7, hasGift: false },
-      { name: "吳志明", table: "1", stroke: 7, hasGift: false },
-      { name: "吳孟玲", table: "28", stroke: 7, hasGift: true },
-      { name: "吳秉鴻", table: "8", stroke: 7, hasGift: false },
-      { name: "吳阿禮", table: "17", stroke: 7, hasGift: false },
-      { name: "吳俊伯", table: "8", stroke: 7, hasGift: false },
-      { name: "呂元庭", table: "9", stroke: 7, hasGift: false },
-      { name: "呂佳霖", table: "6", stroke: 7, hasGift: false },
-      { name: "呂昆憲", table: "3", stroke: 7, hasGift: false },
-      { name: "呂翼純", table: "9", stroke: 7, hasGift: false },
-      { name: "宋玉祥", table: "23", stroke: 7, hasGift: false },
-      { name: "李正明", table: "25", stroke: 7, hasGift: false },
-      { name: "李宗璇", table: "27", stroke: 7, hasGift: true },
-      { name: "李承翰", table: "8", stroke: 7, hasGift: false },
-      { name: "李昭鋒", table: "11", stroke: 7, hasGift: false },
-      { name: "李啟宏", table: "15", stroke: 7, hasGift: true },
-      { name: "李晴雯", table: "12", stroke: 7, hasGift: true },
-      { name: "李毓祥", table: "12", stroke: 7, hasGift: true },
-      { name: "李銘祥", table: "12", stroke: 7, hasGift: true },
-      { name: "李曉雯", table: "29", stroke: 7, hasGift: true },
-      { name: "辛佩娟", table: "13", stroke: 7, hasGift: true },
-      { name: "周宗霖", table: "15", stroke: 8, hasGift: true },
-      { name: "周濟忠", table: "9", stroke: 8, hasGift: false },
-      { name: "明政車業", table: "23", stroke: 8, hasGift: false },
-      { name: "林三義", table: "10", stroke: 8, hasGift: false },
-      { name: "林士哲", table: "15", stroke: 8, hasGift: true },
-      { name: "林禾穎", table: "21", stroke: 8, hasGift: false },
-      { name: "林佑任", table: "13", stroke: 8, hasGift: true },
-      { name: "林長入", table: "21", stroke: 8, hasGift: false },
-      { name: "林啟章", table: "1", stroke: 8, hasGift: false },
-      { name: "林達清", table: "17", stroke: 8, hasGift: false },
-      { name: "邱業志", table: "13", stroke: 8, hasGift: true },
-      { name: "侯凱文", table: "9", stroke: 9, hasGift: false },
-      { name: "侯顯昇", table: "3", stroke: 9, hasGift: false },
-      { name: "姚明宏", table: "17", stroke: 9, hasGift: false },
-      { name: "封居和", table: "29", stroke: 9, hasGift: true },
-      { name: "柯志雄", table: "19", stroke: 9, hasGift: false },
-      { name: "柯河協", table: "19", stroke: 9, hasGift: false },
-      { name: "洪秋菊", table: "20", stroke: 9, hasGift: false },
-      { name: "洪啟聰", table: "11", stroke: 9, hasGift: false },
-      { name: "洪慶昌", table: "10", stroke: 9, hasGift: false },
-      { name: "紀素蘭", table: "3", stroke: 9, hasGift: false },
-      { name: "翁晉源", table: "26", stroke: 10, hasGift: false },
-      { name: "徐紹謙", table: "9", stroke: 10, hasGift: false },
-      { name: "張永林", table: "主", stroke: 11, hasGift: false },
-      { name: "張宇仁", table: "11", stroke: 11, hasGift: false },
-      { name: "張孝瑄", table: "5", stroke: 11, hasGift: true },
-      { name: "張秀屏", table: "5", stroke: 11, hasGift: false },
-      { name: "張育誠", table: "3", stroke: 11, hasGift: false },
-      { name: "張宗德", table: "18", stroke: 11, hasGift: false },
-      { name: "張美淑", table: "10", stroke: 11, hasGift: false },
-      { name: "張書鳴", table: "7", stroke: 11, hasGift: false },
-      { name: "張國勤", table: "10", stroke: 11, hasGift: false },
-      { name: "張景崑", table: "18", stroke: 11, hasGift: false },
-      { name: "張曉萍", table: "1", stroke: 11, hasGift: false },
-      { name: "莊永來", table: "11", stroke: 11, hasGift: false },
-      { name: "莊祐齊", table: "28", stroke: 11, hasGift: true },
-      { name: "許有發", table: "25", stroke: 11, hasGift: false },
-      { name: "許志偉", table: "12", stroke: 11, hasGift: true },
-      { name: "郭盈瑩", table: "13", stroke: 11, hasGift: true },
-      { name: "郭貞妤", table: "6", stroke: 11, hasGift: false },
-      { name: "郭慶松", table: "22", stroke: 11, hasGift: false },
-      { name: "陳文英", table: "5", stroke: 11, hasGift: true },
-      { name: "陳正忠", table: "18", stroke: 11, hasGift: false },
-      { name: "陳民智", table: "25", stroke: 11, hasGift: false },
-      { name: "陳永洲", table: "19", stroke: 11, hasGift: false },
-      { name: "陳俊男", table: "20", stroke: 11, hasGift: false },
-      { name: "陳奕臻", table: "28", stroke: 11, hasGift: true },
-      { name: "陳柏亨", table: "28", stroke: 11, hasGift: true },
-      { name: "陳素貞", table: "1", stroke: 11, hasGift: false },
-      { name: "陳聖馗", table: "12", stroke: 11, hasGift: true },
-      { name: "陳裕生", table: "15", stroke: 11, hasGift: true },
-      { name: "彭永富", table: "18", stroke: 12, hasGift: false },
-      { name: "游天下", table: "2", stroke: 12, hasGift: false },
-      { name: "游志成", table: "2", stroke: 12, hasGift: false },
-      { name: "游武發", table: "主", stroke: 12, hasGift: false },
-      { name: "游俊勝", table: "7", stroke: 12, hasGift: false },
-      { name: "游俊惠", table: "2", stroke: 12, hasGift: false },
-      { name: "游峻林", table: "2", stroke: 12, hasGift: false },
-      { name: "游淑芬", table: "11", stroke: 12, hasGift: false },
-      { name: "湯有成", table: "20", stroke: 12, hasGift: false },
-      { name: "黃世雄", table: "26", stroke: 12, hasGift: false },
-      { name: "黃成平", table: "26", stroke: 12, hasGift: false },
-      { name: "黃秋美", table: "16", stroke: 12, hasGift: false },
-      { name: "黃美芬", table: "13", stroke: 12, hasGift: true },
-      { name: "黃美珍", table: "20", stroke: 12, hasGift: false },
-      { name: "黃振鈞", table: "主", stroke: 12, hasGift: false },
-      { name: "黃健航", table: "15", stroke: 12, hasGift: true },
-      { name: "黃崇華", table: "6", stroke: 12, hasGift: false },
-      { name: "黃意婷", table: "27", stroke: 12, hasGift: true },
-      { name: "黃福源", table: "17", stroke: 12, hasGift: false },
-      { name: "黃馨儀", table: "27", stroke: 12, hasGift: true },
-      { name: "楊王元廷", table: "28", stroke: 13, hasGift: true },
-      { name: "楊保生", table: "17", stroke: 13, hasGift: false },
-      { name: "楊益彰", table: "1", stroke: 13, hasGift: false },
-      { name: "楊清雄", table: "19", stroke: 13, hasGift: false },
-      { name: "楊智捷", table: "15", stroke: 13, hasGift: true },
-      { name: "葉永輝", table: "17", stroke: 13, hasGift: false },
-      { name: "賈志浩", table: "29", stroke: 13, hasGift: true },
-      { name: "鄒嘉棋", table: "16", stroke: 13, hasGift: false },
-      { name: "廖啟亨", table: "28", stroke: 14, hasGift: true },
-      { name: "廖燈村", table: "21", stroke: 14, hasGift: false },
-      { name: "劉文能", table: "25", stroke: 15, hasGift: false },
-      { name: "劉志宗", table: "18", stroke: 15, hasGift: false },
-      { name: "劉邦宏", table: "主", stroke: 15, hasGift: false },
-      { name: "劉佳偉", table: "5", stroke: 15, hasGift: true },
-      { name: "劉晉華", table: "8", stroke: 15, hasGift: false },
-      { name: "劉婉苓", table: "8", stroke: 15, hasGift: false },
-      { name: "劉達德", table: "19", stroke: 15, hasGift: false },
-      { name: "劉德陽", table: "5", stroke: 15, hasGift: false },
-      { name: "劉興漢", table: "6", stroke: 15, hasGift: false },
-      { name: "劉馥瑩", table: "5", stroke: 15, hasGift: false },
-      { name: "歐進雄", table: "26", stroke: 15, hasGift: false },
-      { name: "蔡正昌", table: "6", stroke: 15, hasGift: false },
-      { name: "蔡明信", table: "15", stroke: 15, hasGift: true },
-      { name: "蔡昕翰", table: "27", stroke: 15, hasGift: true },
-      { name: "蔡啟明", table: "21", stroke: 15, hasGift: false },
-      { name: "蔡智閱", table: "13", stroke: 15, hasGift: true },
-      { name: "蔡瑞珍", table: "13", stroke: 15, hasGift: true },
-      { name: "蔣瑞融", table: "26", stroke: 15, hasGift: false },
-      { name: "鄭人魁", table: "22", stroke: 15, hasGift: false },
-      { name: "鄭岳輝", table: "23", stroke: 15, hasGift: false },
-      { name: "鄭姿婷", table: "27", stroke: 15, hasGift: true },
-      { name: "鄭壹壬", table: "11", stroke: 15, hasGift: false },
-      { name: "賴毓成", table: "16", stroke: 16, hasGift: false },
-      { name: "謝煥琴", table: "21", stroke: 17, hasGift: false },
-      { name: "鐘諭欣", table: "29", stroke: 17, hasGift: false },
-      { name: "顏上傑", table: "13", stroke: 18, hasGift: false },
-      { name: "蘇祐麟", table: "27", stroke: 20, hasGift: false },
-      { name: "蘇惠貞", table: "16", stroke: 20, hasGift: false },
-      { name: "蘇鈺婷", table: "27", stroke: 20, hasGift: false }
-    ];
-
     const groupedData = data
       .slice()
       .sort((a, b) => {
@@ -493,9 +371,7 @@
         return a.name.localeCompare(b.name, "zh-Hant");
       })
       .reduce((groups, person) => {
-        if (!groups[person.stroke]) {
-          groups[person.stroke] = [];
-        }
+        if (!groups[person.stroke]) groups[person.stroke] = [];
         groups[person.stroke].push(person);
         return groups;
       }, {});
@@ -505,6 +381,24 @@
     const strokeSelect = document.getElementById("strokeSelect");
     const nameInput = document.getElementById("nameInput");
     const searchResult = document.getElementById("searchResult");
+    const floatingSearch = document.getElementById("floatingSearch");
+    const toggleSearchBtn = document.getElementById("toggleSearchBtn");
+
+    function renderSummary() {
+      const cards = [
+        { label: "總賓客數", value: data.length },
+        { label: "筆畫區段", value: Object.keys(groupedData).length },
+        { label: "有禮餅", value: data.filter(person => person.hasGift).length },
+        { label: "主桌名單", value: data.filter(person => person.table === "主").length }
+      ];
+
+      summary.innerHTML = cards.map(card => `
+        <div class="summary-card">
+          <strong>${card.value}</strong>
+          <span>${card.label}</span>
+        </div>
+      `).join("");
+    }
 
     function createTableSection(stroke, people) {
       return `
@@ -515,6 +409,11 @@
           </div>
           <div class="table-wrap">
             <table>
+              <colgroup>
+                <col class="col-name">
+                <col class="col-table">
+                <col class="col-gift">
+              </colgroup>
               <thead>
                 <tr>
                   <th>姓名</th>
@@ -527,11 +426,7 @@
                   <tr data-name="${person.name}">
                     <td>${person.name}</td>
                     <td>${person.table}</td>
-                    <td>
-                      <span class="${person.hasGift ? "gift-yes" : "gift-no"}">
-                        ${person.hasGift ? "有" : "無"}
-                      </span>
-                    </td>
+                    <td><span class="${person.hasGift ? "gift-yes" : "gift-no"}">${person.hasGift ? "有" : "無"}</span></td>
                   </tr>
                 `).join("")}
               </tbody>
@@ -551,9 +446,7 @@
     }
 
     function clearHighlights() {
-      document.querySelectorAll("tbody tr.targeted").forEach(row => {
-        row.classList.remove("targeted");
-      });
+      document.querySelectorAll("tbody tr.targeted").forEach(row => row.classList.remove("targeted"));
     }
 
     function scrollToStroke(stroke) {
@@ -588,9 +481,7 @@
         if (row) row.classList.add("targeted");
       });
 
-      if (firstMatch) {
-        firstMatch.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
+      if (firstMatch) firstMatch.scrollIntoView({ behavior: "smooth", block: "center" });
 
       const names = matches.slice(0, 3).map(person => person.name).join("、");
       const suffix = matches.length > 3 ? ` 等 ${matches.length} 筆` : `，共 ${matches.length} 筆`;
@@ -599,15 +490,17 @@
 
     document.getElementById("searchBtn").addEventListener("click", searchByName);
     nameInput.addEventListener("keydown", event => {
-      if (event.key === "Enter") {
-        searchByName();
-      }
+      if (event.key === "Enter") searchByName();
     });
 
     strokeSelect.addEventListener("change", event => {
-      if (event.target.value) {
-        scrollToStroke(event.target.value);
-      }
+      if (event.target.value) scrollToStroke(event.target.value);
+    });
+
+    toggleSearchBtn.addEventListener("click", () => {
+      const collapsed = floatingSearch.classList.toggle("collapsed");
+      toggleSearchBtn.textContent = collapsed ? "+" : "-";
+      toggleSearchBtn.setAttribute("aria-expanded", String(!collapsed));
     });
 
     renderContent();
