@@ -136,15 +136,19 @@
     }
 
     col.col-name {
-      width: 52%;
+      width: 34%;
     }
 
     col.col-table {
-      width: 24%;
+      width: 22%;
+    }
+
+    col.col-attendance {
+      width: 22%;
     }
 
     col.col-gift {
-      width: 24%;
+      width: 22%;
     }
 
     th,
@@ -434,12 +438,14 @@
               <colgroup>
                 <col class="col-name">
                 <col class="col-table">
+                <col class="col-attendance">
                 <col class="col-gift">
               </colgroup>
               <thead>
                 <tr>
                   <th>姓名</th>
                   <th>桌號</th>
+                  <th>人數</th>
                   <th>禮餅</th>
                 </tr>
               </thead>
@@ -448,6 +454,7 @@
                   <tr data-name="${person.name}">
                     <td>${person.name}</td>
                     <td>${person.table}</td>
+                    <td>${person.attendance}</td>
                     <td><span class="${person.hasGift ? "gift-yes" : "gift-no"}">${person.hasGift ? "有" : "無"}</span></td>
                   </tr>
                 `).join("")}
