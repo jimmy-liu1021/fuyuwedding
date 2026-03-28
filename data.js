@@ -64,7 +64,7 @@
   },
   {
     "name": "古榮昌",
-    "table": "10",
+    "table": "23",
     "stroke": 5,
     "hasGift": false,
     "attendance": 2
@@ -197,7 +197,7 @@
   },
   {
     "name": "李昭鋒",
-    "table": "11",
+    "table": "10",
     "stroke": 7,
     "hasGift": false,
     "attendance": 2
@@ -946,7 +946,7 @@
   },
   {
     "name": "鄭岳輝",
-    "table": "23",
+    "table": "11",
     "stroke": 15,
     "hasGift": false,
     "attendance": 2
